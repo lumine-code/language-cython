@@ -1,0 +1,10 @@
+{
+  ".source.cython": {
+    "bracket-matcher": {
+      "autocompleteCharacters": ["()", "[]", "{}", "\"\"", "''"]
+    },
+    "editor": {
+      "commentStart": "# "
+    }
+  }
+}

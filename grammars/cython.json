@@ -1,0 +1,24 @@
+{
+  "name": "Cython",
+  "scopeName": "source.cython",
+  "type": "tree-sitter",
+  "parser": "tree-sitter-cython",
+  "injectionNames": ["cython", "pyx"],
+  "fileTypes": ["pyx", "pxd", "pxi"],
+  "comments": {
+    "start": "# "
+  },
+  "treeSitter": {
+    // Pin a tag or a full SHA, never a branch. Verify the ref is on the main
+    // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
+    // reporting `diverged` or a nonzero `behind` means it is not.
+    "parserSource": "github:b0o/tree-sitter-cython#756a20c4d601b715f7b321eaad144f4cb14031bf",
+    "wasmBuildTool": "tree-sitter-cli#v0.26.13",
+    "grammar": "cython.wasm",
+    "highlightsQuery": "cython-highlights.scm",
+    "foldsQuery": "cython-folds.scm",
+    "indentsQuery": "cython-indents.scm",
+    "tagsQuery": "cython-tags.scm",
+    "localsQuery": "cython-locals.scm"
+  }
+}
