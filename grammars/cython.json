@@ -13,7 +13,7 @@
     // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
     // reporting `diverged` or a nonzero `behind` means it is not.
     "parserSource": "github:b0o/tree-sitter-cython#756a20c4d601b715f7b321eaad144f4cb14031bf",
-    "wasmBuildTool": "tree-sitter-cli#v0.26.13",
+    "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "cython.wasm",
     "highlightsQuery": "cython-highlights.scm",
     "foldsQuery": "cython-folds.scm",
