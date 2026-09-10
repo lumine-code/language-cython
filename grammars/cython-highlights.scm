@@ -83,7 +83,8 @@
 (integer) @constant.numeric.integer.cython
 (float) @constant.numeric.float.cython
 
-(comment) @comment.line.number-sign.cython
+((comment) @comment.line.number-sign.cython
+  (#set! adjust.endBeforeFirstMatchOf "\\r?$"))
 ((comment) @punctuation.definition.comment.cython
   (#set! adjust.endAfterFirstMatchOf "^#"))
 
@@ -96,11 +97,9 @@
 ((string) @string.quoted.single.cython
   (#match? @string.quoted.single.cython "^[bBfFrRuU]*'(?!')"))
 
-(string
-  (string_start) @punctuation.definition.string.begin.cython)
+(string_start) @punctuation.definition.string.begin.cython
 
-(string
-  (string_end) @punctuation.definition.string.end.cython)
+(string_end) @punctuation.definition.string.end.cython
 
 (escape_sequence) @constant.character.escape.cython
 
