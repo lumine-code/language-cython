@@ -3,7 +3,7 @@
   "scopeName": "source.cython",
   "type": "tree-sitter",
   "parser": "tree-sitter-cython",
-  "injectionNames": ["cython", "pyx"],
+  "injectionNames": ["cython", "pyrex", "pyx"],
   "fileTypes": ["pyx", "pxd", "pxi"],
   "comments": {
     "start": "# "
