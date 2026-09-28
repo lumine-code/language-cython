@@ -20,6 +20,11 @@ describe("Cython Tree-sitter grammar", () => {
 
   afterEach(() => editor?.destroy());
 
+  async function highlightCaptures(options) {
+    const groups = await editor.getGrammarQueryCaptureGroups("highlightsQuery", options);
+    return groups.find(({ grammar }) => grammar === editor.getGrammar())?.captures ?? [];
+  }
+
   it("tokenizes the fixture", async () => {
     await runGrammarTests(path.join(__dirname, "fixtures", "sample.pyx"), /#/);
   });
@@ -71,18 +76,16 @@ describe("Cython Tree-sitter grammar", () => {
         (_, index) => `x_${index} = fn([1, 2], {"a": 3}) # generated`,
       ).join("\r\n"),
     );
-    const languageMode = editor.getBuffer().getLanguageMode();
-    await languageMode.ready;
-    const layer = languageMode.rootLanguageLayer;
+    await editor.getBuffer().getLanguageMode().ready;
 
-    expect(layer.queries.highlightsQuery.captures(layer.tree.rootNode).length).toBeLessThanOrEqual(
-      24000,
-    );
+    expect((await highlightCaptures()).length).toBeLessThanOrEqual(24000);
     expect(
-      layer.queries.highlightsQuery.captures(layer.tree.rootNode, {
-        startPosition: new Point(400, 0),
-        endPosition: new Point(406, 0),
-      }).length,
+      (
+        await highlightCaptures({
+          startPosition: new Point(400, 0),
+          endPosition: new Point(406, 0),
+        })
+      ).length,
     ).toBeLessThanOrEqual(145);
   });
 
@@ -93,16 +96,12 @@ describe("Cython Tree-sitter grammar", () => {
         "\r\n",
       ),
     );
-    const languageMode = editor.getBuffer().getLanguageMode();
-    await languageMode.ready;
-    const layer = languageMode.rootLanguageLayer;
+    await editor.getBuffer().getLanguageMode().ready;
     const options = {
       startPosition: new Point(3000, 0),
       endPosition: new Point(3006, 0),
     };
 
-    expect(
-      layer.queries.highlightsQuery.captures(layer.tree.rootNode, options).length,
-    ).toBeLessThanOrEqual(100);
+    expect((await highlightCaptures(options)).length).toBeLessThanOrEqual(100);
   });
 });
