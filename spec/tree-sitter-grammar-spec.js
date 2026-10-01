@@ -21,8 +21,11 @@ describe("Cython Tree-sitter grammar", () => {
   afterEach(() => editor?.destroy());
 
   async function highlightCaptures(options) {
-    const groups = await editor.getGrammarQueryCaptureGroups("highlightsQuery", options);
-    return groups.find(({ grammar }) => grammar === editor.getGrammar())?.captures ?? [];
+    const queryCaptures = (await editor.getGrammar().getQuery("highlightsQuery")).captures(
+      editor.languageMode.tree.rootNode,
+      options,
+    );
+    return queryCaptures;
   }
 
   it("tokenizes the fixture", async () => {

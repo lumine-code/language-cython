@@ -14,10 +14,10 @@ Cython language support.
 
 To install `language-cython` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-cython`.
 
-## Services
+## Injections
 
-- **hyperlink.injection** (`^1.0.0`): consumed to highlight URLs inside Cython comments as clickable links.
-- **todo.injection** (`^1.0.0`): consumed to highlight `TODO`-style markers inside comments.
+- Static Tree-sitter injections highlight URLs with `language-hyperlink`.
+- Static Tree-sitter injections highlight comment markers with `language-todo`.
 
 ## Contributing
 
