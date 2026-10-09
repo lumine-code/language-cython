@@ -3,6 +3,9 @@
   "author": "lumine-code",
   "version": "1.0.0",
   "main": "lib/main",
+  "specPackages": [
+    "language-regex"
+  ],
   "files": [
     "grammars",
     "lib",
