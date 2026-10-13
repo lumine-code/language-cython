@@ -1,0 +1,16 @@
+{
+  "title": "language-cython",
+  "description": "Cython syntax highlighting in the editor.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "9c4f174e0950255168c7b7a28239edb6db999a5d",
+  "mode": "normal",
+  "fontSettings": "default",
+  "images": [
+    {
+      "file": "demo.png",
+      "label": "Cython syntax highlighting at the default editor font size.",
+      "width": 1100,
+      "height": 406
+    }
+  ]
+}

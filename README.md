@@ -10,6 +10,8 @@ Cython language support.
 - **Navigation**: exposes definitions, references, and local bindings from Tree-sitter queries.
 - **Embedded regex**: parses patterns passed through the `re` module with the shared regex grammar when available.
 
+![Cython syntax highlighting at the default editor font size.](.github/demo.png)
+
 ## Installation
 
 To install `language-cython` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-cython`.
