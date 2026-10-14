@@ -1,16 +1,61 @@
 {
   "title": "language-cython",
-  "description": "Cython syntax highlighting in the editor.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "9c4f174e0950255168c7b7a28239edb6db999a5d",
+  "description": "Cython syntax highlighting at the default editor font size.",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "118de9090075579a270d7e1a779d16fcb650a5e1",
+  "themeSourceRevision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "44a7dd653b4db2d8ad9ba7b7e3bd7293c5b103ee59ee32d14a8bee4540de9d7a",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1100, "height": 406 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "c4d7a05fe6960ae6fb041981d6cf13e9c0286b17",
+      "dirty": true,
+      "workingTreeHash": "af0ec098e764416df9522f3c6e555050b520e4700da382b2b983b2ff3742bd0a"
+    },
+    "package": {
+      "revision": "118de9090075579a270d7e1a779d16fcb650a5e1",
+      "dirty": true,
+      "workingTreeHash": "2477d732a13306e2166ff0661256ace4007f8c8bcb8d25b7cd868270d8c5ade6"
+    },
+    "language-cython": {
+      "revision": "118de9090075579a270d7e1a779d16fcb650a5e1",
+      "dirty": true,
+      "workingTreeHash": "2477d732a13306e2166ff0661256ace4007f8c8bcb8d25b7cd868270d8c5ade6"
+    },
+    "one-theme": {
+      "revision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
+      "dirty": true,
+      "workingTreeHash": "25d6ed50595d6b10f7d53e41dbbe8f92dcb5c0e911871356f3e6138e5c76df57"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "example.pyx",
+      "sha256": "5512ffb00affe643a4f44ff888aa568077000bc5fa9973ccf78845968de938f1"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Cython syntax highlighting at the default editor font size.",
       "width": 1100,
-      "height": 406
+      "height": 406,
+      "sha256": "6217514cf9cdbe1e32b1c4cacd50450c429479908c861e898856f13b815c4f27"
     }
   ]
 }
