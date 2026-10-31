@@ -1,3 +1,8 @@
+; A recovered string opener marks literal text, even if error recovery exposes
+; its punctuation as ordinary tokens. Keep the level while the quote is open.
+(ERROR (string_start) @match.next
+  (#set! indent.match startPosition))
+
 ; Reindent changes code structure, never the contents of multiline literals
 ; or the alignment a user chose inside a block comment.
 ([(string) (comment)] @preserve
@@ -142,6 +147,20 @@
   (#is? test.startsOnSameRowAs "nextSibling.endPosition")
   (#set! capture.final)
 )
+
+; Cython permits PASS and enum members directly after these header colons.
+(extern_block ":" @_IGNORE_ . (extern_suite (pass_statement))
+  (#is? test.startsOnSameRowAs "parent.endPosition")
+  (#set! capture.final))
+(struct ":" @_IGNORE_ . (struct_suite (pass_statement))
+  (#is? test.startsOnSameRowAs "parent.endPosition")
+  (#set! capture.final))
+(cppclass ":" @_IGNORE_ . (pass_statement)
+  (#is? test.startsOnSameRowAs "parent.endPosition")
+  (#set! capture.final))
+(enum ":" @_IGNORE_ . (c_identifier)
+  (#is? test.startsOnSameRowAs "parent.endPosition")
+  (#set! capture.final))
 
 ; Special case for try/except statements, since they don't seem to be valid
 ; until they're fully intact. If we don't do this, `except` doesn't dedent.
