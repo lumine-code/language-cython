@@ -2,6 +2,9 @@
 Source: https://github.com/b0o/tree-sitter-cython
 Revision: 756a20c4d601b715f7b321eaad144f4cb14031bf
 
+Parser source: github:b0o/tree-sitter-cython#756a20c4d601b715f7b321eaad144f4cb14031bf
+Resolved commit: 756a20c4d601b715f7b321eaad144f4cb14031bf
+
 Original file: LICENSE
 
 The MIT License (MIT)
